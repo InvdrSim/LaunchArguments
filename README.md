@@ -4,19 +4,19 @@ This sample project aims to show how to get and use launch arguments (or command
 
 ## Structure
 
-![](./Readme/Dependencies.png)
+<img src="./Readme/Dependencies.png" style="max-width: 581px;" />
 
 The relevant parts of the sample project for that are the files [Bootstrap.cs](./Assets/App/Bootstrap.cs) and [Arguments.cs](./Assets/App/Settings/Arguments.cs).
 
 The class `Bootstrap` is the main entry point for the application and (in this case) the only part of the code that directly makes use of the `Arguments` class to access launch arguments.
 
-![](./Readme/DependenciesSimple.png)
+<img src="./Readme/DependenciesSimple.png" style="max-width: 369px" />
 
 ## Flow
 
 Below you can find a flowchart for how the `Bootstrap` class works.
 
-![](./Readme/Flowchart.png)
+<img src="./Readme/Flowchart.png" style="max-width: 461px" />
 
 ## `Arguments` class
 
