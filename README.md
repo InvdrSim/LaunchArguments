@@ -2,7 +2,7 @@
 
 This sample project aims to show how to get and use launch arguments (or commandline arguments) in a Unity project.
 
-After building the application, launch it from the terminal with custom parameters like:
+After building the application launch it from the terminal with custom parameters like:
 
 ```powershell
 .\LaunchArgumentsSample.exe --portal-user-name "Anton" --app-session-id 1234 --app-avatar-image-url https://placecats.com/neo/256/256
