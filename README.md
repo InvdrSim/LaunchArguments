@@ -2,6 +2,12 @@
 
 This sample project aims to show how to get and use launch arguments (or commandline arguments) in a Unity project.
 
+After building the application, launch it from the terminal with custom parameters like:
+
+```powershell
+.\LaunchArgumentsSample.exe --portal-user-name "Anton" --app-session-id 1234 --app-avatar-image-url https://placecats.com/neo/256/256
+```
+
 ## Structure
 
 <img src="./Readme/Dependencies.png" style="width: 581px;" />
@@ -11,6 +17,8 @@ The relevant parts of the sample project for that are the files [Bootstrap.cs](.
 The class `Bootstrap` is the main entry point for the application and (in this case) the only part of the code that directly makes use of the `Arguments` class to access launch arguments.
 
 <img src="./Readme/DependenciesSimple.png" style="width: 369px;" />
+
+The rest of the app simulates functionality through console logging and basic screen displays, forgoing full implementation of features like multiplayer and avatar loading.
 
 ## Flow
 
@@ -39,6 +47,8 @@ bool TryGet(string key, out string value)
 #### Example
 
 ```csharp
+// > App.exe --my-string-argument "Hello world"
+
 var arguments = Arguments.Instance;
 
 if (arguments.TryGet("my-string-argument", out string myStringArgument))
@@ -53,3 +63,12 @@ else
     Application.Quit();
 }
 ```
+
+## Potential improvements
+- Dedicated public properties for common parameters, e.g. in a class derived from `Arguments`.
+- "Toggles" without a value, i.e. boolean value: 
+  ```powershell
+  ./App.exe --enable-passthrough --my-string-argument "Hello World"
+            ^^^^^^^^^^^^^^^^^^^^
+  ```
+- Also capture other launch parameters, e.g. Unity engine parameters with single dashes (e.g. `-screen-fullscreen 0`) for easy access inside the application.
